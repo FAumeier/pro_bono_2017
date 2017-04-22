@@ -1,10 +1,18 @@
 package RauAPI.model;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by flo on 22.04.17.
  */
+@Entity
+@Table(name = "users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @NotNull
     private String name;
 
     public User() {
